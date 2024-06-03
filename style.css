@@ -1,0 +1,664 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/*Base HMTL START*/
+:root {
+  --main-color: #ff0454;
+  --white-color: #ececec;
+  --black-color: #000000;
+  --border-style: 0.1rem solid rgba(255, 255, 255, 0.4);
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 9rem;
+  scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+  width: 0.9rem;
+  background-color: var(--white-color);
+}
+
+html::-webkit-scrollbar-thumb {
+  border-radius: 3rem;
+  background-color: var(--black-color);
+}
+
+body {
+  background-color: var(--main-color);
+}
+
+section {
+  padding: 3.5rem 7%;
+}
+
+section a {
+  color: var(--black-color);
+  text-decoration: none;
+}
+
+section a:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+.heading {
+  color: var(--white-color);
+  text-transform: uppercase;
+  font-size: 4rem;
+  margin-bottom: 4rem;
+  border-bottom: 0.1rem solid var(--white-color);
+}
+
+.btn {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 2rem 3rem;
+  border-radius: 30rem;
+  font-size: 1.7rem;
+  color: #fff;
+  background-color: var(--black-color);
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+/*Base HMTL END*/
+
+/* Reset CSS */
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: 0.2s ease;
+}
+
+/* header section css start */
+.header {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 7%;
+  margin: 2rem 7%;
+  border-radius: 30rem;
+  position: sticky;
+  top: 0;
+  z-index: 2000;
+}
+
+.header .logo {
+  height: 10.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--main-color);
+  font-size: 3rem;
+  font-style: italic;
+  font-weight: 900;
+}
+
+.header .navbar a {
+  margin: 0 1rem;
+  font-size: 1.8rem;
+  color: var(--black-color);
+  border-bottom: 0.1rem solid transparent;
+}
+
+.header .navbar.active,
+.header .navbar a:hover {
+  border-color: var(--main-color);
+
+  padding-bottom: 0.4rem;
+}
+
+.header .buttons button {
+  cursor: pointer;
+  font-size: 2.5rem;
+  margin-left: 2rem;
+  background-color: transparent;
+}
+
+#menu-Btn {
+  display: none;
+}
+
+.header .searchForm {
+  position: absolute;
+  top: 115%;
+  right: 7%;
+  background-color: #fff;
+  width: 50rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  border-radius: 3rem;
+  transform: scaleY(0);
+}
+
+.header .searchForm.active {
+  transform: scaleY(1);
+}
+
+.header .searchForm i {
+  cursor: pointer;
+  font-size: 2.2rem;
+  margin-right: 1.5rem;
+  color: var(--black-color);
+}
+
+.header .searchForm input {
+  width: 100%;
+  margin: 0 1rem;
+}
+
+/* header section css end */
+
+/* home section css start */
+.homeSection {
+  min-height: 100vh;
+  background: url("https://s1.1zoom.me/b6152/819/Pizza_Tomatoes_547600_1920x1080.jpg")
+    no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin-top: -14.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.homeSection .content {
+  max-width: 60rem;
+}
+
+.homeSection .content h3 {
+  color: var(--white-color);
+  font-size: 6rem;
+}
+
+.homeSection .content p {
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 1.8;
+  padding: 1rem 0;
+  color: #ccc;
+}
+
+/* home section css end */
+
+/* menu section css start */
+.menuSection .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 2fr));
+  gap: 1.5rem;
+}
+
+.menuSection .box-container .box {
+  padding: 3rem;
+  background-color: #fff;
+  border-radius: 3rem;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menuSection .box-container .box img {
+  width: 100%;
+
+  object-fit: cover;
+}
+
+.menuSection .box-container .box h3 {
+  font-size: 3rem;
+  padding: 1rem 0;
+}
+
+.menuSection .box-container .box .price {
+  font-size: 2.5rem;
+  padding: 0.5rem 0;
+}
+
+.menuSection .box-container .box .price span {
+  font-size: 1.7rem;
+  text-decoration: line-through;
+  font-weight: 300;
+  margin-left: 1rem;
+}
+/* menu section css end */
+
+/* products section css start */
+
+.productsSection .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 2fr));
+  gap: 1.5rem;
+}
+
+.productsSection .box-container .box {
+  text-align: center;
+  background-color: #fff;
+  position: relative;
+  border-radius: 3rem;
+  height: 60rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3rem;
+}
+
+.productsSection .box-container .box .box-head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  z-index: 10;
+}
+
+.productsSection .box-container .box .box-head .name {
+  color: #fff;
+  font-size: 4rem;
+  font-weight: bold;
+  text-align: start;
+  overflow-wrap: anywhere;
+}
+
+.productsSection .box-container img {
+  position: absolute;
+  top: 50%;
+  left: 500;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  border-radius: 3rem;
+}
+
+.productsSection .box-container .dark-bg img {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: unset;
+}
+
+.productsSection .box-container .box-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 1000;
+}
+
+.productsSection .box-container .box-bottom .info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: #fff;
+  font-size: 3rem;
+}
+
+.productsSection .box-container .box-bottom .info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: #fff;
+  font-size: 3rem;
+}
+
+.productsSection .box-container .box-bottom .info .amount {
+  font-size: 1.8rem;
+}
+
+.productsSection .box-container .box-bottom .product-btn a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 7rem;
+  height: 7rem;
+  border: 0.5rem solid var(--white-color);
+}
+
+.productsSection .box-container .box-bottom .product-btn a:hover {
+  opacity: 0.7;
+}
+
+.productsSection .box-container .box-bottom .product-btn a i {
+  font-size: 2rem;
+  color: var(--white-color);
+}
+
+/* products section css end */
+
+/* about section css start */
+
+.aboutSection .about {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 5rem;
+}
+
+.aboutSection .about .image {
+  flex: 1 1 45rem;
+}
+
+.aboutSection .image img {
+  width: 100%;
+}
+
+.aboutSection .about .about-content {
+  flex: 1 1 45rem;
+}
+
+.aboutSection .about .about-content h3 {
+  color: var(--white-color);
+  font-size: 3rem;
+}
+
+.aboutSection .about .about-content p {
+  font-size: 1.8rem;
+  color: #ccc;
+  padding: 1rem 0;
+  line-height: 3rem;
+}
+
+/* about section css end */
+
+/* review section css start */
+
+.reviewSection .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 1.5rem;
+}
+
+.reviewSection .box-container .box {
+  border: var(--border-style);
+  text-align: center;
+  padding: 3rem 2rem;
+  background-color: #fff;
+  border-radius: 3rem;
+}
+
+.reviewSection .box-container .box img {
+  width: 30rem;
+}
+
+.reviewSection .box-container .box p {
+  font-size: 1.6rem;
+  line-height: 1.8;
+  padding: 2rem 0;
+}
+
+.reviewSection .box-container .box .user {
+  height: 9rem;
+  width: 9rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.reviewSection .box-container .box h3 {
+  padding: 1rem 0;
+  font-size: 2rem;
+  color: #ff0454;
+}
+
+.reviewSection .box-container .box i {
+  font-size: 1.5rem;
+  color: gold;
+}
+/* review section css end */
+
+/* review section css start */
+
+.contactSection .row {
+  display: flex;
+  background-color: var(--black-color);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.contactSection .row .map {
+  flex: 1 1 45rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+.contactSection .row form {
+  flex: 1 1 45rem;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.contactSection .row form h3 {
+  font-size: 3.5rem;
+  color: #fff;
+  text-decoration: uppercase;
+}
+
+.contactSection .row form .input-box {
+  display: flex;
+  align-items: center;
+  margin: 2rem 0;
+  border: var(--border-style);
+}
+
+.contactSection .row form .input-box i {
+  color: #fff;
+  font-size: 2rem;
+  padding-left: 2rem;
+}
+
+.contactSection .row form .input-box input {
+  width: 100%;
+  padding: 2rem;
+  font-size: 1.7rem;
+  color: #fff;
+  background-color: transparent;
+  text-transform: none;
+}
+
+.contactSection .row form .btn {
+  color: var(--main-color);
+  background-color: var(--white-color);
+  font-weight: bold;
+  cursor: pointer;
+}
+/* review section css end */
+
+/* footer section css start */
+
+.footer {
+  background-color: var(--black-color);
+}
+
+.footer .footerTop {
+  height: 250px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer .footerTop .footer-topleft i,
+span {
+  font-size: 1.5rem;
+  color: #ccc;
+  text-align: start;
+}
+
+.footer .footerTop a {
+  font-size: 2rem;
+  color: #ccc;
+  text-decoration: underline;
+  text-underline-offset: 0.5rem;
+}
+
+.footer .footerTop .firstBtn {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 3rem;
+}
+.footer .footerTop .secondBtn {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 3rem;
+}
+
+.footerBottom {
+  height: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footerBottom h2 {
+  color: var(--main-color);
+  font-size: 4rem;
+  font-style: italic;
+}
+
+.footer .share {
+  padding: 2rem 0;
+}
+
+.footer .share a {
+  font-size: 4rem;
+  color: #fff;
+  width: 5rem;
+  height: 5rem;
+  line-height: 5rem;
+  text-decoration: none;
+}
+
+.footer .credit {
+  text-align: center;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 300;
+  padding-top: 2rem;
+}
+
+.footer .credit span {
+  color: var(--main-color);
+  font-size: 1.8rem;
+  font-weight: 300;
+}
+
+hr {
+  height: 0.1rem;
+  color: #ccc;
+  background-color: #ccc;
+  opacity: 0.2;
+}
+
+/* footer section css end */
+
+/* Responsive Start */
+
+@media (max-width: 1130px) {
+  html {
+    font-size: 55%;
+  }
+  .header {
+    padding: 0 2rem;
+  }
+
+  .section {
+    padding: 2rem;
+  }
+  .productsSection .box-container .box .box-head .name {
+    font-size: 3.4rem;
+  }
+}
+
+@media (max-width: 876px) {
+  .header .searchForm {
+    width: 35rem;
+  }
+
+  #menu-Btn {
+    display: inline-block;
+  }
+
+  .header .navbar {
+    position: absolute;
+    top: 95%;
+    background-color: #fff;
+    height: calc(100vh - 9rem);
+    width: 30rem;
+    box-shadow: 0px 20px 14px 0px rgb(0 0 0 / 75%);
+    right: -100%;
+  }
+
+  .header .navbar.active {
+    right: 3rem;
+  }
+  .header .navbar a {
+    color: var(--black-color);
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  html {
+    font-size: 50%;
+  }
+  .footer .footerTop {
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .footer .footerTop .firstBtn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .footer .footerTop .secondBtn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .footer .footerTop .footer-topleft {
+    margin-top: 3rem;
+    order: 3;
+  }
+
+  .footer .footerTop .firstBtn {
+    order: 2;
+  }
+
+  .footerBottom {
+    height: 150px;
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .credit {
+    margin-top: 2rem;
+    padding: 0;
+  }
+}
+
+/* Responsive End */
